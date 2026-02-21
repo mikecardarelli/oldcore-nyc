@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oldcore NYC</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🗽</text></svg>">
+  </head>
+  <body>
+<img src="oldcore-header-gw.jpg" alt="George Washington at Fraunces Tavern with iconic NYC food">
+<h1>Oldcore NYC 🗽</h1>
+<p>The definitive list of century-old places to eat and drink in New York City</p>
+<hr>
+<h2>Map View</h2>
+<iframe src="https://www.google.com/maps/d/embed?mid=1BQez9CVHPCzPWWeQHNJh2r6iFbCqNgs&ehbc=2E312F&noprof=1" width="100%" height="480"></iframe>
+<h2>List View</h2>
+<a href="https://oldcore.nyc/Oldcore-NYC-Checklist.pdf" class="button" target="blank">Download Printable Checklist</a>
+<table id="restaurantTable">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Restaurant Name</th>
+                <th>Year Opened</th>
+                <th>
+                    <select id="boroughFilter">
+                        <option value="All Boroughs">All Boroughs</option>
+                        <option value="Manhattan">Manhattan</option>
+                        <option value="Brooklyn">Brooklyn</option>
+                        <option value="Queens">Queens</option>
+                        <option value="The Bronx">The Bronx</option>
+                        <option value="Staten Island">Staten Island</option>
+                    </select>
+                </th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Fraunces Tavern</td>
+                <td>1762</td>
+                <td>Manhattan</td>
+                <td>54 Pearl St, New York, NY 10004</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ear Inn</td>
+                <td>1817</td>
+                <td>Manhattan</td>
+                <td>326 Spring St, New York, NY 10013</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Acker Wines</td>
+                <td>1820</td>
+                <td>Manhattan</td>
+                <td>160 W 72nd St, New York, NY 10023</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Neir's Tavern</td>
+                <td>1829</td>
+                <td>Queens</td>
+                <td>87-48 78th St, Woodhaven, NY 11421</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Delmonico's</td>
+                <td>1837</td>
+                <td>Manhattan</td>
+                <td>56 Beaver St, New York, NY 10004</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Fanelli Cafe</td>
+                <td>1847</td>
+                <td>Manhattan</td>
+                <td>94 Prince St, New York, NY 10012</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>McSorley's Old Ale House</td>
+                <td>1854</td>
+                <td>Manhattan</td>
+                <td>15 E 7th St, New York, NY 10003</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Killmeyer's Old Bavaria Inn</td>
+                <td>1855</td>
+                <td>Staten Island</td>
+                <td>4254 Arthur Kill Rd, Staten Island, NY 10309</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Julius'</td>
+                <td>1864</td>
+                <td>Manhattan</td>
+                <td>159 W 10th St, New York, NY 10014</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Pete's Tavern</td>
+                <td>1864</td>
+                <td>Manhattan</td>
+                <td>129 E 18th St, New York, NY 10003</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Landmark Tavern</td>
+                <td>1868</td>
+                <td>Manhattan</td>
+                <td>626 11th Ave, New York, NY 10036</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Old Homestead Steakhouse</td>
+                <td>1868</td>
+                <td>Manhattan</td>
+                <td>56 9th Ave, New York, NY 10011</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>The Paris Cafe</td>
+                <td>1873</td>
+                <td>Manhattan</td>
+                <td>119 South Street, New York, NY 10038</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Holtermann's Bakery</td>
+                <td>1878</td>
+                <td>Staten Island</td>
+                <td>405 Arthur Kill Rd, Staten Island, NY 10308</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Gage and Tollner</td>
+                <td>1879</td>
+                <td>Brooklyn</td>
+                <td>372 Fulton St, Brooklyn, NY 11201</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>White Horse Tavern</td>
+                <td>1880</td>
+                <td>Manhattan</td>
+                <td>567 Hudson St, New York, NY 10014</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>P.J. Clarke's </td>
+                <td>1884</td>
+                <td>Manhattan</td>
+                <td>915 3rd Ave, New York, NY 10022</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Keens Steakhouse</td>
+                <td>1885</td>
+                <td>Manhattan</td>
+                <td>72 W 36th St., New York, NY 10018</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>The Brooklyn Inn</td>
+                <td>1885</td>
+                <td>Brooklyn</td>
+                <td>148 Hoyt St, Brooklyn, NY 11217</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Peter Luger Steakhouse</td>
+                <td>1887</td>
+                <td>Brooklyn</td>
+                <td>178 Broadway, Brooklyn, NY 11211</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Teddy's Bar & Grill </td>
+                <td>1887</td>
+                <td>Brooklyn</td>
+                <td>96 Berry St, Brooklyn, NY 11249</td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Katz's Delicatessen</td>
+                <td>1888</td>
+                <td>Manhattan</td>
+                <td>205 E Houston St, New York, NY 10002</td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Walker's</td>
+                <td>1890</td>
+                <td>Manhattan</td>
+                <td>16 N Moore St, New York, NY 10013</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>Caffe Roma</td>
+                <td>1891</td>
+                <td>Manhattan</td>
+                <td>385 Broome St, New York, NY 10013</td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>Ferrara Bakery & Cafe</td>
+                <td>1892</td>
+                <td>Manhattan</td>
+                <td>195 Grand St, New York, NY 10013</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>Hurley's Saloon</td>
+                <td>1892</td>
+                <td>Manhattan</td>
+                <td>232 W 48th St, New York, NY 10036</td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>Old Town Bar</td>
+                <td>1892</td>
+                <td>Manhattan</td>
+                <td>45 E 18th St, New York, NY 10003</td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>Veniero's Pasticceria & Caffe</td>
+                <td>1894</td>
+                <td>Manhattan</td>
+                <td>342 E 11th St, New York, NY 10003</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>McNulty's Tea and Coffee Co.</td>
+                <td>1895</td>
+                <td>Manhattan</td>
+                <td>109 Christopher St, New York, NY 10014</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Rao's</td>
+                <td>1896</td>
+                <td>Manhattan</td>
+                <td>455 E 114th St, New York, NY 10029</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>Faicco's Italian Specialties</td>
+                <td>1900</td>
+                <td>Manhattan</td>
+                <td>260 Bleecker St, New York, NY 10014</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>Ottomanelli Bros.</td>
+                <td>1900</td>
+                <td>Manhattan</td>
+                <td>1549 York Ave, New York, NY 10028</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>Bamonte's</td>
+                <td>1902</td>
+                <td>Brooklyn</td>
+                <td>32 Withers St, Brooklyn, NY 11211</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>Casa D'Angelo</td>
+                <td>1902</td>
+                <td>Manhattan</td>
+                <td>146 Mulberry St, New York, NY 10013</td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>Cozy Corner</td>
+                <td>1902</td>
+                <td>Queens</td>
+                <td>60-01 70th Ave, Ridgewood, NY 11385</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>Pasticceria Monteleone</td>
+                <td>1902</td>
+                <td>Brooklyn</td>
+                <td>355 Court St, Brooklyn, NY 11231</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>Parisi Bakery</td>
+                <td>1903</td>
+                <td>Manhattan</td>
+                <td>198 Mott St, New York, NY 10012</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>Caputo's Bake Shop</td>
+                <td>1904</td>
+                <td>Brooklyn</td>
+                <td>329 Court St, Brooklyn, NY 11231</td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>Original Vincent's</td>
+                <td>1904</td>
+                <td>Manhattan</td>
+                <td>119 Mott St, New York, NY 10013</td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>Pino's Prime Meat Market</td>
+                <td>1904</td>
+                <td>Manhattan</td>
+                <td>149 Sullivan St, New York, NY 10012</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>Liedy's Shore Inn</td>
+                <td>1905</td>
+                <td>Staten Island</td>
+                <td>748 Richmond Terrace, Staten Island, NY 10301</td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td>Lombardi's Pizza</td>
+                <td>1905</td>
+                <td>Manhattan</td>
+                <td>32 Spring St, New York, NY 10012</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>Barbetta</td>
+                <td>1906</td>
+                <td>Manhattan</td>
+                <td>321 W 46th St, New York, NY 10036</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>Raffetto's</td>
+                <td>1906</td>
+                <td>Manhattan</td>
+                <td>144 W Houston St, New York, NY 10012</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>Gargiulo's</td>
+                <td>1907</td>
+                <td>Brooklyn</td>
+                <td>2911 W 15th St, Brooklyn, NY 11224</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td>Porto Rico Importing Co.</td>
+                <td>1907</td>
+                <td>Manhattan</td>
+                <td>201 Bleecker St, New York, NY 10012</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>Barney Greengrass</td>
+                <td>1908</td>
+                <td>Manhattan</td>
+                <td>541 Amsterdam Ave, New York, NY 10024</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>John's of 12th Street</td>
+                <td>1908</td>
+                <td>Manhattan</td>
+                <td>302 E 12th St, New York, NY 10003</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td>Mulberry Street Bar</td>
+                <td>1908</td>
+                <td>Manhattan</td>
+                <td>176 Mulberry St, New York, NY 10013</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>Russo's</td>
+                <td>1908</td>
+                <td>Manhattan</td>
+                <td>344 E 11th St, New York, NY 10003</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td>Bohemian Hall & Beer Garden</td>
+                <td>1910</td>
+                <td>Queens</td>
+                <td>29-19 24th Ave, Astoria, NY 11105</td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td>Leonard's Sea Food & Prime Meats</td>
+                <td>1910</td>
+                <td>Manhattan</td>
+                <td>1437 2nd Ave, New York, NY 10021</td>
+            </tr>
+            <tr>
+                <td>53</td>
+                <td>Yonah Schimmel's Knish Bakery</td>
+                <td>1910</td>
+                <td>Manhattan</td>
+                <td>137 E Houston St, New York, NY 10002</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>Schatzie Prime Meats</td>
+                <td>1911</td>
+                <td>Manhattan</td>
+                <td>2665 Broadway A, New York, NY 10025</td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td>Egidio Pastry Shop</td>
+                <td>1912</td>
+                <td>The Bronx</td>
+                <td>622 E 187th St, Bronx, NY 10458</td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td>Grand Central Oyster Bar and Restaurant</td>
+                <td>1913</td>
+                <td>Manhattan</td>
+                <td>89 E 42nd St, New York, NY 10017</td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td>Russ & Daughters</td>
+                <td>1914</td>
+                <td>Manhattan</td>
+                <td>179 E Houston St, New York, NY 10002</td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td>Nathan's Famous</td>
+                <td>1916</td>
+                <td>Brooklyn</td>
+                <td>1310 Surf Ave, Brooklyn, NY 11224</td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td>Orwasher's Bakery</td>
+                <td>1916</td>
+                <td>Manhattan</td>
+                <td>308 E 78th St, New York, NY 10075</td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td>Lobel's Prime Meats</td>
+                <td>1917</td>
+                <td>Manhattan</td>
+                <td>1096 Madison Ave, New York, NY 10028</td>
+            </tr>
+            <tr>
+                <td>61</td>
+                <td>Staubitz Market</td>
+                <td>1917</td>
+                <td>Brooklyn</td>
+                <td>222 Court St, Brooklyn, NY 11201</td>
+            </tr>
+            <tr>
+                <td>62</td>
+                <td>Savarese Italian Pastry Shoppe</td>
+                <td>1918</td>
+                <td>Brooklyn</td>
+                <td>5922 New Utrecht Ave, Brooklyn, NY 11219</td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td>Mario's Restaurant</td>
+                <td>1919</td>
+                <td>The Bronx</td>
+                <td>2342 Arthur Ave, Bronx, NY 10458</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>Vassilaros & Sons</td>
+                <td>1919</td>
+                <td>Queens</td>
+                <td>18-13 41st St, Astoria, NY 11105</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td>Nom Wah Tea Parlor</td>
+                <td>1920</td>
+                <td>Manhattan</td>
+                <td>13 Doyers St, New York, NY 10013</td>
+            </tr>
+            <tr>
+                <td>66</td>
+                <td>Basilio Inn</td>
+                <td>1921</td>
+                <td>Staten Island</td>
+                <td>6 Galesville Ct, Staten Island, NY 10305</td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td>Defonte's Sandwich Shop</td>
+                <td>1922</td>
+                <td>Brooklyn</td>
+                <td>379 Columbia St, Brooklyn, NY 11231</td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td>Rosner Kosher Meat</td>
+                <td>1922</td>
+                <td>Brooklyn</td>
+                <td>719 Avenue U, Brooklyn, NY 11223</td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td>Square Diner</td>
+                <td>1922</td>
+                <td>Manhattan</td>
+                <td>33 Leonard St, New York, NY 10013</td>
+            </tr>
+            <tr>
+                <td>70</td>
+                <td>Albanese Meats & Poultry</td>
+                <td>1923</td>
+                <td>Manhattan</td>
+                <td>238 Elizabeth St, New York, NY 10012</td>
+            </tr>
+            <tr>
+                <td>71</td>
+                <td>Li-Lac Chocolates</td>
+                <td>1923</td>
+                <td>Manhattan</td>
+                <td>75 Greenwich Ave, New York, NY 10014</td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td>Poseidon Greek Bakery</td>
+                <td>1923</td>
+                <td>Manhattan</td>
+                <td>629 9th Ave, New York, NY 10036</td>
+            </tr>
+            <tr>
+                <td>73</td>
+                <td>Gottscheer Hall</td>
+                <td>1924</td>
+                <td>Queens</td>
+                <td>657 Fairview Ave, Ridgewood, NY 11385</td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td>Totonno's Pizzeria Napolitana</td>
+                <td>1924</td>
+                <td>Brooklyn</td>
+                <td>1524 Neptune Ave, Brooklyn, NY 11224</td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td>Di Palo's Fine Foods</td>
+                <td>1925</td>
+                <td>Manhattan</td>
+                <td>200 Grand St, New York, NY 10013</td>
+            </tr>
+            <tr>
+                <td>76</td>
+                <td>Eddie's Sweet Shop</td>
+                <td>1925</td>
+                <td>Queens</td>
+                <td>105-29 Metropolitan Ave, Forest Hills, NY 11375</td>
+            </tr>
+            <tr>
+                <td>77</td>
+                <td>Lexington Candy Shop</td>
+                <td>1925</td>
+                <td>Manhattan</td>
+                <td>1226 Lexington Ave, New York, NY 10028</td>
+            </tr>
+            <tr>
+                <td>78</td>
+                <td>Schmidt's Candy</td>
+                <td>1925</td>
+                <td>Queens</td>
+                <td>9415 Jamaica Ave, Woodhaven, NY 11421</td>
+            </tr>
+        </tbody>
+    </table>
+  <footer>
+    <p>Built by Cardarelli & Feltz in NYC. (Last updated: March 14, 2025)</p>
+  </footer>
+  <script>
+        const filter = document.getElementById('boroughFilter');
+        const table = document.getElementById('restaurantTable');
+        const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+        filter.addEventListener('change', function() {
+            const selectedBorough = this.value;
+            let visibleCount = 0;
+
+            for (let i = 0; i < rows.length; i++) {
+                const boroughCell = rows[i].getElementsByTagName('td')[3];
+                const borough = boroughCell.textContent;
+
+                if (selectedBorough === 'All Boroughs' || borough === selectedBorough) {
+                    rows[i].style.display = '';
+                    visibleCount++;
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+
+            if (visibleCount === 0) {
+                table.style.display = 'none';
+                noResults.style.display = 'block';
+            } else {
+                table.style.display = 'table';
+                noResults.style.display = 'none';
+            }
+        });
+    </script>
+  </body>
+</html>

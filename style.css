@@ -1,0 +1,107 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+html {
+	cursor: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="64" width="64"><text y="28" font-size="32">🗽</text></svg>'), auto;
+}
+
+body {
+  background-color: #FFAC1C;
+  color: #1F51FF;
+  font-family: helvetica;
+  font-size: 20px;
+}
+
+img {
+  outline: 6px solid #1F51FF;
+  display: block;
+  margin: auto;
+  width: 63%;
+  }
+  
+/* On screens that are 1279px or less, set */
+@media screen and (max-width: 960px) {
+  img {
+    width: 100%;
+  }
+}
+
+h1 {
+  font-size: 48px;
+  color: #1F51FF;
+}
+
+h2 {
+  font-size: 36px;
+  color: #1F51FF;
+}
+
+hr {
+  border: 3px solid #1F51FF;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  background-color: #1F51FF;
+  border-radius: 12px;
+  text-decoration: none; 
+  padding: 16px;
+  color: white;
+  font-size: 20px;
+  margin: -16px 0px 24px 0px;
+}
+
+.button:hover {
+  border: 1px solid white;
+  text-decoration: underline; 
+}
+
+select {
+  color: #1F51FF;
+  display: block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: white;
+  width: 100%;
+}
+        
+select:hover {
+  border-color: #1F51FF;
+}
+        
+select:focus {
+  outline: 1px solid #1F51FF;
+  border-color: #1F51FF;
+}
+
+table {
+  border: 3px solid;
+  border-collapse: collapse;
+  width: 100%
+}
+
+th {
+  border: 3px solid #1F51FF;
+  padding: 4px;
+  color: #1F51FF;
+  font-weight: bold;
+  background-color: White;
+  }
+
+td {
+  border: 3px solid #1F51FF;
+  padding: 4px;
+  color: #1F51FF;
+  background-color: White;
+}
+
+footer {
+  text-align: center;
+}
