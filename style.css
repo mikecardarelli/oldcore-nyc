@@ -100,5 +100,11 @@ td {
 
 footer {
   text-align: center;
-  margin: 24px 24px;
+  margin: 24px 24px 0 24px;
+  padding-bottom: 0;
+  line-height: 1.8;
+}
+
+footer h3 {
+  margin: 8px 0 0 0;
 }
