@@ -98,6 +98,13 @@ td {
   background-color: White;
 }
 
+@media screen and (max-width: 600px) {
+  th:nth-child(5),
+  td:nth-child(5) {
+    display: none;
+  }
+}
+
 footer {
   text-align: center;
   margin: 24px 24px 0 24px;
